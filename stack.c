@@ -29,6 +29,15 @@ void push(Stack *s, void *value){
 	s->data[s->size++] = value;
 }
 
+void* pop(Stack *s) {
+	if (s->size == 0) {
+		printf("Can't pop from empty stack");
+		exit(EXIT_FAILURE);
+	}
+
+	return s->data[--s->size];
+}
+
 
 void print_stack(Stack *s,DisplayStack func){
 	int size = s->size;
